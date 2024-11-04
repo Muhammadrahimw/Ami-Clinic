@@ -1,488 +1,691 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+		<link rel="stylesheet" href="./src/global.css" />
+		<link rel="stylesheet" href="./src/output.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+	</head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="./src/global.css">
-    <link rel="stylesheet" href="./src/output.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
-</head>
+	<body>
+		<header class="ctr pt-6">
+			<nav
+				class="py-6 flex justify-between items-center gap-2 max-[1400px]:text-sm tr max-xl:text-xs max-xl:gap-1 max-lg:text-xt max-md:text-lg">
+				<div class="logo flex justify-between gap-4 items-center">
+					<a href="./index.html"
+						><img
+							class="w-full max-xl:w-[120px] tr max-lg:w-[90px] max-md:w-[120px]"
+							src="./elements/Logotype.svg"
+							alt="logo"
+					/></a>
+					<div
+						class="vertical_line w-[2px] border border-gray-400 h-[46px] max-md:hidden"></div>
+					<p class="prg text-[--gray-color] max-md:hidden">
+						Заботливая стоматология, <br />
+						которую вы полюбите.
+					</p>
+				</div>
+				<div
+					id="links"
+					class="links flex gap-8 max-xl:gap-4 max-md:fixed text-xs max-md:top-0 max-md:left-[-200%] max-md:w-full max-md:h-[100vh] max-md:flex-col max-md:backdrop-blur-lg max-md:p-12 max-md:text-2xl">
+					<!-- <i class="fa-solid fa-xmark fa-lg hidden fixed top-12 right-12 max-md:block"></i> -->
+					<select
+						class="outline-none text-lg bg-transparent max-md:w-[200px] cursor-pointer text-[--dimBlack-color]">
+						<option class="text-lg text-[--dimBlack-color]">Услуги</option>
+						<option class="text-lg text-[--dimBlack-color]">?</option>
+					</select>
+					<select
+						class="outline-none text-lg bg-transparent max-md:w-[200px] cursor-pointer text-[--dimBlack-color]">
+						<option class="text-lg text-[--dimBlack-color]">О клинике</option>
+						<option class="text-lg text-[--dimBlack-color]">?</option>
+					</select>
+					<a class="text-lg text-[--dimBlack-color]" href="#">Отзывы</a>
+					<a class="text-lg text-[--dimBlack-color]" href="#"
+						>Акции, рассрочки</a
+					>
+					<a class="text-lg text-[--dimBlack-color]" href="#">Статьи</a>
+					<a class="text-lg text-[--dimBlack-color]" href="#">Контакты</a>
+				</div>
+				<div class="menu hidden max-md:flex items-center gap-4">
+					<p class="prg text-[--main-color] max-[360px]:hidden">Меню</p>
+					<i id="menu" class="fa-solid fa-bars fa-lg text-[--main-color]"></i>
+				</div>
+			</nav>
 
-<body>
+			<div
+				class="showcase mb-4 w-full h-[500px] flex items-center justify-between gap-10 bgStyle bg-[url('/elements/showcase.png')] px-[3.5em] py-8 rounded-[1em] max-lg:text-xs tr max-md:bg-[url('/elements/showcase_next.png')] max-md:h-[400px] max-sm:text-xt max-sm:h-[320px] max-[360px]:flex-col max-[360px]:text-center max-[360px]:bg-[url('/elements/showcase_next_2.png')] max-[360px]:px-5 max-[360px]:text-[0.625em] max-[360px]:h-[550px] max-[320px]:h-[450px]">
+				<div class="showcase_left flex flex-col justify-center">
+					<p class="bprg text-[--gray-color] font-semibold">Cтоматология</p>
+					<h1
+						class="hdg text-[6em] text-[--text-color] leading-none font-normal">
+						AMICLINIC
+					</h1>
+					<p class="prg">Заботливая стоматология, которую вы полюбите!</p>
+					<div class="flex gap-2 mt-6 max-[360px]:hidden">
+						<button class="btn w-[14em]">Запись на первый приём</button>
+						<button class="btn w-[15.25em] bg-[--green-color]">
+							Узнать стоимость WhatsApp
+						</button>
+					</div>
+					<div class="flex items-center gap-6 mt-6 max-[360px]:hidden">
+						<div class="flex items-center gap-2">
+							<i class="fa-solid fa-clock text-[--main-color]"></i>
+							<p class="prg">Пн-Вс 9:00-21:00</p>
+						</div>
+						<div class="flex items-center gap-2">
+							<i class="fa-solid fa-location-dot fa-lg text-[--main-color]"></i>
+							<a
+								class="prg"
+								target="_blank"
+								href="https://maps.app.goo.gl/9Fby1LkvfKFjXjG67"
+								>г. Москва, ул. Таганская, д. 26, стр. 1
+							</a>
+						</div>
+					</div>
+				</div>
+				<div
+					class="showcase_right flex gap-2 items-end h-full tr max-[1150px]:hidden max-[360px]:flex max-[360px]:flex-col max-[360px]:justify-end pb-0">
+					<div
+						class="gap-2 mt-6 hidden flex-col max-[360px]:flex max-[360px]:w-full">
+						<button
+							class="btn w-[14em] max-[360px]:w-full max-[360px]:text-[1.25em]">
+							Запись на первый приём
+						</button>
+						<button
+							class="btn w-[15.25em] px-2 bg-[--green-color] max-[360px]:w-full max-[360px]:text-[1.25em]">
+							Узнать стоимость WhatsApp
+						</button>
+					</div>
+					<div
+						class="flex gap-2 items-end h-full max-[360px]:h-11 max-[360px]:mt-4 pb-0">
+						<div
+							class="flex justify-center items-center px-5 h-[4em] rounded-md bg-[#ffffff50] backdrop-blur-md cursor-pointer max-xl:h-[3em] max-xl:px-3 tr">
+							<img src="./elements/Frame.svg" alt="zoon" />
+						</div>
+						<div
+							class="flex justify-center items-center px-5 h-[4em] rounded-md bg-[#ffffff50] backdrop-blur-md cursor-pointer max-xl:h-[3em] max-xl:px-3 tr">
+							<img
+								src="./elements/ПроДокторов – сайт отзывов пациентов о врачах №1 в России-0 1.svg"
+								alt="zoon" />
+						</div>
+						<div
+							class="flex justify-center items-center px-5 h-[4em] rounded-md bg-[#ffffff50] backdrop-blur-md cursor-pointer max-xl:h-[3em] max-xl:px-3 tr">
+							<img src="./elements/Frame-1.svg" alt="zoon" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
 
-    <header class="ctr pt-6">
-        <nav
-            class="py-6 flex justify-between items-center gap-2 max-[1400px]:text-sm tr max-xl:text-xs max-xl:gap-1 max-lg:text-xt max-md:text-lg">
-            <div class="logo flex justify-between gap-4 items-center">
-                <a href="./index.html"><img class="w-full max-xl:w-[120px] tr max-lg:w-[90px] max-md:w-[120px]"
-                        src="./elements/Logotype.svg" alt="logo"></a>
-                <div class="vertical_line w-[2px] border border-gray-400 h-[46px] max-md:hidden">
-                </div>
-                <p class="prg text-[--gray-color] max-md:hidden">Заботливая стоматология, <br> которую вы полюбите.</p>
-            </div>
-            <div id="links" class=" links flex gap-8 max-xl:gap-4 max-md:fixed text-xs max-md:top-0 max-md:left-[-200%]
-                max-md:w-full max-md:h-[100vh] max-md:flex-col max-md:backdrop-blur-lg max-md:p-12 max-md:text-2xl">
-                <!-- <i class="fa-solid fa-xmark fa-lg hidden fixed top-12 right-12 max-md:block"></i> -->
-                <select
-                    class="outline-none text-lg bg-transparent max-md:w-[200px] cursor-pointer text-[--dimBlack-color]">
-                    <option class="text-lg text-[--dimBlack-color]">Услуги</option>
-                    <option class="text-lg text-[--dimBlack-color]">?</option>
-                </select>
-                <select
-                    class="outline-none text-lg bg-transparent max-md:w-[200px] cursor-pointer text-[--dimBlack-color]">
-                    <option class="text-lg text-[--dimBlack-color]">О клинике</option>
-                    <option class="text-lg text-[--dimBlack-color]">?</option>
-                </select>
-                <a class="text-lg text-[--dimBlack-color]" href="#">Отзывы</a>
-                <a class="text-lg text-[--dimBlack-color]" href="#">Акции, рассрочки</a>
-                <a class="text-lg text-[--dimBlack-color]" href="#">Статьи</a>
-                <a class="text-lg text-[--dimBlack-color]" href="#">Контакты</a>
-            </div>
-            <div class="menu hidden max-md:flex items-center gap-4">
-                <p class="prg text-[--main-color] max-[360px]:hidden">Меню</p>
-                <i id="menu" class="fa-solid fa-bars fa-lg text-[--main-color]"></i>
-            </div>
-        </nav>
+		<main>
+			<section
+				class="showcase_bottom ctr grid grid-cols-2 gap-2 mb-8 max-md:grid-cols-1">
+				<div
+					class="showcase_bottom-item flex flex-col justify-end p-8 bg-[url('/elements/1.png')] bgStyle w-full rounded-2xl h-[16em] max-[360px]:p-4 max-[360px]:text-sm tr">
+					<p class="text-xl text-[--white-color]">All-on-4 / Имплантация</p>
+					<p class="prg text-[--white-color] mt-2">
+						Полное восстановление зубов за 1 день
+					</p>
+					<button class="btn mt-4">Узнать подробнее</button>
+				</div>
+				<div
+					class="showcase_bottom-item flex flex-col justify-end p-8 bg-[url('/elements/2.png')] bgStyle w-full rounded-2xl h-[16em] max-[360px]:p-4 max-[360px]:text-sm tr">
+					<p class="text-xl text-[--white-color]">Лечение зубов</p>
+					<p class="prg text-[--white-color] mt-2">Терапия</p>
+					<button class="btn mt-4">Узнать подробнее</button>
+				</div>
+				<div
+					class="showcase_bottom-item flex flex-col justify-end p-8 bg-[url('/elements/3.png')] bgStyle w-full rounded-2xl h-[16em] max-[360px]:p-4 max-[360px]:text-sm tr">
+					<p class="text-xl text-[--white-color]">Выравнивание зубов</p>
+					<p class="prg text-[--white-color] mt-2">Ортодонтия</p>
+					<button class="btn mt-4">Узнать подробнее</button>
+				</div>
+				<div
+					class="showcase_bottom-item flex flex-col justify-end p-8 bg-[url('/elements/4.png')] bgStyle w-full rounded-2xl h-[16em] max-[360px]:p-4 max-[360px]:text-sm tr">
+					<p class="text-xl text-[--white-color]">Эстетика/виниры</p>
+					<p class="prg text-[--white-color] mt-2">Ортопедия</p>
+					<button class="btn mt-4">Узнать подробнее</button>
+				</div>
+			</section>
 
-        <div
-            class="showcase mb-4 w-full h-[500px] flex items-center justify-between gap-10 bgStyle bg-[url('/elements/showcase.png')] px-[3.5em] py-8 rounded-[1em] max-lg:text-xs tr max-md:bg-[url('/elements/showcase_next.png')] max-md:h-[400px] max-sm:text-xt max-sm:h-[320px]  max-[360px]:flex-col max-[360px]:text-center max-[360px]:bg-[url('/elements/showcase_next_2.png')] max-[360px]:px-5 max-[360px]:text-[0.625em] max-[360px]:h-[550px] max-[320px]:h-[450px]">
-            <div class="showcase_left flex flex-col justify-center">
-                <p class="bprg text-[--gray-color] font-semibold">Cтоматология</p>
-                <h1 class="hdg text-[6em] text-[--text-color] leading-none font-normal">AMICLINIC</h1>
-                <p class="prg">Заботливая стоматология, которую вы полюбите!</p>
-                <div class="flex gap-2 mt-6 max-[360px]:hidden">
-                    <button class="btn w-[14em]">Запись на первый приём</button>
-                    <button class="btn w-[15.25em] bg-[--green-color]">Узнать стоимость WhatsApp</button>
-                </div>
-                <div class="flex items-center gap-6 mt-6 max-[360px]:hidden">
-                    <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-clock text-[--main-color]"></i>
-                        <p class="prg">Пн-Вс 9:00-21:00</p>
-                    </div>
-                    <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-location-dot fa-lg text-[--main-color]"></i>
-                        <a class="prg" target="_blank" href="https://maps.app.goo.gl/9Fby1LkvfKFjXjG67">г. Москва, ул.
-                            Таганская, д. 26,
-                            стр. 1
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div
-                class="showcase_right flex gap-2 items-end h-full tr max-[1150px]:hidden max-[360px]:flex max-[360px]:flex-col max-[360px]:justify-end pb-0">
-                <div class="gap-2 mt-6 hidden flex-col max-[360px]:flex max-[360px]:w-full">
-                    <button class="btn w-[14em] max-[360px]:w-full max-[360px]:text-[1.25em]">Запись на первый
-                        приём</button>
-                    <button
-                        class="btn w-[15.25em] px-2 bg-[--green-color] max-[360px]:w-full max-[360px]:text-[1.25em]">Узнать
-                        стоимость
-                        WhatsApp</button>
-                </div>
-                <div class="flex gap-2 items-end h-full max-[360px]:h-11 max-[360px]:mt-4 pb-0">
-                    <div
-                        class="flex justify-center items-center px-5 h-[4em] rounded-md bg-[#ffffff50] backdrop-blur-md cursor-pointer max-xl:h-[3em] max-xl:px-3 tr">
-                        <img src="./elements/Frame.svg" alt="zoon">
-                    </div>
-                    <div
-                        class="flex justify-center items-center px-5 h-[4em] rounded-md bg-[#ffffff50] backdrop-blur-md cursor-pointer max-xl:h-[3em] max-xl:px-3 tr">
-                        <img src="./elements/ПроДокторов – сайт отзывов пациентов о врачах №1 в России-0 1.svg"
-                            alt="zoon">
-                    </div>
-                    <div
-                        class="flex justify-center items-center px-5 h-[4em] rounded-md bg-[#ffffff50] backdrop-blur-md cursor-pointer max-xl:h-[3em] max-xl:px-3 tr">
-                        <img src="./elements/Frame-1.svg" alt="zoon">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+			<section
+				class="showcase_bottom-second ctr grid grid-cols-3 gap-4 mb-8 max-lg:text-xs max-md:grid-cols-2 max-sm:grid-cols-1">
+				<div
+					class="showcase_bottom-second-item px-8 pt-10 flex flex-col justify-between bg-[#F7F9FC] rounded-2xl tr">
+					<div>
+						<p class="text-[--black-color] font-semibold">
+							Лечение у специалистов с 20-ти летнем опытом.
+						</p>
+						<p class="mt-6 text-[--dimBlack-color]">
+							500+ отзывов на независимых ресурсах а так же видео отзывы и
+							отзывы с результатами у нас на сайте.
+						</p>
+					</div>
+					<div class="flex justify-end mt-12 max-[320px]:mt-6">
+						<img class="w-[10em]" src="./elements/5.png" alt="" />
+					</div>
+				</div>
+				<div
+					class="showcase_bottom-second-item px-8 pt-10 flex flex-col justify-between bg-[#F7F9FC] rounded-2xl tr">
+					<div>
+						<p class="text-[--black-color] font-semibold">
+							Оптимальное решение под ваш бюджет
+						</p>
+						<p class="mt-6 text-[--dimBlack-color]">
+							Озвученная на приёме стоимость окончательная. Вам не придётся
+							доплачивать ни за какие доп.услуги или материалы в процессе
+						</p>
+					</div>
+					<div class="flex justify-end mt-12 max-[320px]:mt-6">
+						<img class="w-[10em]" src="./elements/6.png" alt="" />
+					</div>
+				</div>
+				<div
+					class="showcase_bottom-second-item px-8 pt-10 flex flex-col justify-between bg-[#F7F9FC] rounded-2xl tr max-md:col-span-2 max-sm:col-span-1">
+					<div>
+						<p class="text-[--black-color] font-semibold">
+							Вы полностью контролируете процесс
+						</p>
+						<p class="mt-6 text-[--dimBlack-color]">
+							Личный куратор на связи 24/7: отвечает на ваши вопросы понятным
+							языком и «ведет за руку» по плану лечения.
+						</p>
+					</div>
+					<div class="flex justify-end mt-12 max-[320px]:mt-6">
+						<img class="w-[10em]" src="./elements/7.png" alt="" />
+					</div>
+				</div>
+			</section>
 
-    <main>
-        <section class="showcase_bottom ctr grid grid-cols-2 gap-2 mb-8 max-md:grid-cols-1">
-            <div
-                class="showcase_bottom-item flex flex-col justify-end p-8 bg-[url('/elements/1.png')] bgStyle w-full rounded-2xl h-[16em] max-[360px]:p-4 max-[360px]:text-sm tr">
-                <p class="text-xl text-[--white-color]">All-on-4 / Имплантация</p>
-                <p class="prg text-[--white-color] mt-2">Полное восстановление зубов за 1 день</p>
-                <button class="btn mt-4">Узнать подробнее</button>
-            </div>
-            <div
-                class="showcase_bottom-item flex flex-col justify-end p-8 bg-[url('/elements/2.png')] bgStyle w-full rounded-2xl h-[16em] max-[360px]:p-4 max-[360px]:text-sm tr">
-                <p class="text-xl text-[--white-color]">Лечение зубов</p>
-                <p class="prg text-[--white-color] mt-2">Терапия</p>
-                <button class="btn mt-4">Узнать подробнее</button>
-            </div>
-            <div
-                class="showcase_bottom-item flex flex-col justify-end p-8 bg-[url('/elements/3.png')] bgStyle w-full rounded-2xl h-[16em] max-[360px]:p-4 max-[360px]:text-sm tr">
-                <p class="text-xl text-[--white-color]">Выравнивание зубов</p>
-                <p class="prg text-[--white-color] mt-2">Ортодонтия</p>
-                <button class="btn mt-4">Узнать подробнее</button>
-            </div>
-            <div
-                class="showcase_bottom-item flex flex-col justify-end p-8 bg-[url('/elements/4.png')] bgStyle w-full rounded-2xl h-[16em] max-[360px]:p-4 max-[360px]:text-sm tr">
-                <p class="text-xl text-[--white-color]">Эстетика/виниры</p>
-                <p class="prg text-[--white-color] mt-2">Ортопедия</p>
-                <button class="btn mt-4">Узнать подробнее</button>
-            </div>
-        </section>
+			<section
+				class="calculating ctr mb-[6em] max-xl:text-xs max-lg:text-[0.625em] max-lg:mb-[3em] tr max-[480px]:text-sm max-[360px]:mb-[1em] max-[320px]:text-xs">
+				<h2
+					class="text-[2em] text-[--black-color] text-center font-semibold max-[360px]:text-[1.5em]">
+					Рассчитайте стоимость лечения своих зубов
+				</h2>
+				<div
+					class="calculating_body w-full grid grid-cols-3 gap-2 mt-10 max-md:grid-cols-1 max-[360px]:mt-4 tr">
+					<div
+						class="calculate_info w-full p-12 bg-[#f1f7fc] rounded-2xl border border-gray-300 max-lg:p-8 tr max-md:flex max-md:justify-between max-md:items-start max-md:gap-8 max-[480px]:flex-col max-[480px]:w-full max-[360px]:p-6">
+						<div class="max-md:w-[220px] max-[480px]:w-full">
+							<div class="profile flex gap-3">
+								<img
+									class="w-[4em]"
+									src="./elements/Rectangle 807.svg"
+									alt="doctor" />
+								<div class="flex flex-col">
+									<strong>Маргарита</strong>
+									<p class="prg text-[--gray-color]">Куратор лечения</p>
+								</div>
+							</div>
+							<p class="mt-6 prg">
+								После прохождения сориентирует по стоимости и ответит на все
+								вопросы.
+							</p>
+						</div>
+						<div class="max-md:w-[220px] max-[480px]:w-full">
+							<p class="prg font-semibold mt-8 max-md:mt-0">
+								Ответьте на 5 вопросов и получите:
+							</p>
+							<div class="flex items-center gap-3">
+								<i class="fa-solid fa-gift text-[--main-color]"></i>
+								<p class="prg">
+									Бесплатную консультацию от
+									<span class="underline">стоматолога-кандидата наук</span>
+								</p>
+							</div>
+							<div class="flex items-center gap-3">
+								<i class="fa-solid fa-gift text-[--main-color]"></i>
+								<p class="prg">3 варианта стоимости</p>
+							</div>
+							<div class="flex items-center gap-3">
+								<i class="fa-solid fa-gift text-[--main-color]"></i>
+								<p class="prg">Сюрприз от стоматологии</p>
+							</div>
+						</div>
+					</div>
+					<div
+						class="calculate_select col-span-2 flex flex-col justify-center items-center p-[5em] max-lg:p-[3em] tr border border-gray-300 rounded-2xl max-[360px]:p-[1.5em]">
+						<p class="text-xl">Сколько зубов нуждаются в лечении?</p>
+						<div
+							class="grid grid-cols-2 w-full mt-8 gap-2 max-[480px]:grid-cols-1">
+							<div
+								class="flex justify-center items-center w-full h-[3.5em] rounded-lg border border-gray-300 cursor-pointer">
+								1
+							</div>
+							<div
+								class="flex justify-center items-center w-full h-[3.5em] rounded-lg border border-gray-300 cursor-pointer">
+								2
+							</div>
+							<div
+								class="flex justify-center items-center w-full h-[3.5em] rounded-lg border border-gray-300 cursor-pointer">
+								3
+							</div>
+							<div
+								class="flex justify-center items-center w-full h-[3.5em] rounded-lg border border-gray-300 cursor-pointer">
+								4 и более
+							</div>
+							<div
+								class="flex justify-center items-center w-full h-[3.5em] rounded-lg border border-gray-300 cursor-pointer col-span-2 max-[480px]:col-span-1">
+								Точно не знаю
+							</div>
+						</div>
+						<div
+							class="mt-8 w-full flex gap-4 items-center justify-between max-[360px]:flex-col">
+							<div class="flex flex-col gap-2 items-start w-full">
+								<p class="text-[--gray-color]">3 из 5</p>
+								<div
+									class="w-[42%] h-1 bg-gray-200 rounded-full relative max-[360px]:w-full">
+									<div
+										class="w-[60%] h-1 bg-blue-400 rounded-full absolute top-0 left-0"></div>
+								</div>
+							</div>
+							<div class="flex items-center gap-2 w-full">
+								<button
+									class="prg px-3 py-2 text-[--gray-color] border border-gray-200 rounded-lg max-[360px]:w-full tr">
+									Назад
+								</button>
+								<button
+									class="prg px-3 py-2 bg-[--main-color] rounded-lg text-[--white-color] max-[360px]:w-full tr">
+									Далее
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 
-        <section
-            class="showcase_bottom-second ctr grid grid-cols-3 gap-4 mb-8 max-lg:text-xs max-md:grid-cols-2 max-sm:grid-cols-1">
-            <div
-                class="showcase_bottom-second-item px-8 pt-10 flex flex-col justify-between bg-[#F7F9FC] rounded-2xl tr">
-                <div>
-                    <p class="text-[--black-color] font-semibold">Лечение у специалистов
-                        с 20-ти летнем опытом.
-                    </p>
-                    <p class="mt-6 text-[--dimBlack-color]">
-                        500+ отзывов на независимых ресурсах
-                        а так же видео отзывы и отзывы с результатами у нас на сайте.
-                    </p>
-                </div>
-                <div class="flex justify-end mt-12 max-[320px]:mt-6">
-                    <img class="w-[10em]" src="./elements/5.png" alt="">
-                </div>
-            </div>
-            <div
-                class="showcase_bottom-second-item px-8 pt-10 flex flex-col justify-between bg-[#F7F9FC] rounded-2xl tr">
-                <div>
-                    <p class="text-[--black-color] font-semibold">Оптимальное решение
-                        под ваш бюджет
-                    </p>
-                    <p class="mt-6 text-[--dimBlack-color]">
-                        Озвученная на приёме стоимость окончательная. Вам не придётся доплачивать ни за какие доп.услуги
-                        или материалы в процессе
-                    </p>
-                </div>
-                <div class="flex justify-end mt-12 max-[320px]:mt-6">
-                    <img class="w-[10em]" src="./elements/6.png" alt="">
-                </div>
-            </div>
-            <div
-                class="showcase_bottom-second-item px-8 pt-10 flex flex-col justify-between bg-[#F7F9FC] rounded-2xl tr max-md:col-span-2 max-sm:col-span-1">
-                <div>
-                    <p class="text-[--black-color] font-semibold">Вы полностью контролируете процесс
-                    </p>
-                    <p class="mt-6 text-[--dimBlack-color]">
-                        Личный куратор на связи 24/7: отвечает на ваши вопросы понятным языком и «ведет за руку» по
-                        плану лечения.
-                    </p>
-                </div>
-                <div class="flex justify-end mt-12 max-[320px]:mt-6">
-                    <img class="w-[10em]" src="./elements/7.png" alt="">
-                </div>
-            </div>
-        </section>
+			<section
+				class="creating flex justify-between ctr gap-4 items-center max-xl:text-xs tr max-lg:text-xt max-md:flex-col-reverse max-md:text-sm max-[480px]:text-xt">
+				<div class="create_txt w-6/12 max-md:w-full">
+					<h2 class="hdg leading-none">
+						Ami Clinic COZDANA
+						<span class="text-[--text-color]"> с любовью</span>
+					</h2>
+					<p class="prg text-[--gray-color] mt-6">
+						В 2016 году я привез технологию All-on-4 в Россию, сделав ставку на
+						инновацию. Мне говорили: “Ничего не получится!” “Технология не
+						подходит для российских реалий” Но у меня была вера и твердое
+						убеждение: All-on-4 — это шанс получить новые зубы. Как свои, только
+						еще лучше.
+					</p>
+					<br />
+					<p class="prg text-[--gray-color]">
+						Я понимаю, насколько сейчас трудно выбрать стоматологию. На рынке
+						сотни предложений “Зубы за 1 день”. Но мы видим огромное количество
+						ошибок — когда присылают слепки, снимки, непроверенные окклюзии.
+						Ведь еще 5 лет назад 9 из 10 врачей отрицали саму возможность такой
+						операции.
+					</p>
+					<div class="flex justify-between gap-6 items-center mt-12">
+						<div>
+							<h3 class="hdg text-[2em] leading-none">с 2016г</h3>
+							<p class="prg text-[--gray-color]">
+								Работаем по <br />
+								технологии All-on-4
+							</p>
+						</div>
+						<div>
+							<h3 class="hdg text-[2em] leading-none">35 000+</h3>
+							<p class="prg text-[--gray-color]">
+								Установленных <br />
+								имплантов
+							</p>
+						</div>
+						<div>
+							<h3 class="hdg text-[2em] leading-none">6000+</h3>
+							<p class="prg text-[--gray-color]">
+								Восстановленно <br />
+								челюстей
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="create_img">
+					<img
+						class="min-w-[30em] max-xl:w-[300px] tr max-lg:w-[250px] max-md:w-full"
+						src="./elements/Group 5200.png"
+						alt="people" />
+				</div>
+			</section>
 
-        <section
-            class="calculating ctr mb-[6em] max-xl:text-xs max-lg:text-[0.625em] max-lg:mb-[3em] tr max-[480px]:text-sm max-[360px]:mb-[1em] max-[320px]:text-xs">
-            <h2 class="text-[2em] text-[--black-color] text-center font-semibold max-[360px]:text-[1.5em]">Рассчитайте
-                стоимость лечения своих
-                зубов</h2>
-            <div class="calculating_body w-full grid grid-cols-3 gap-2 mt-10 max-md:grid-cols-1 max-[360px]:mt-4 tr">
-                <div
-                    class="calculate_info w-full p-12 bg-[#f1f7fc] rounded-2xl border border-gray-300 max-lg:p-8 tr max-md:flex max-md:justify-between max-md:items-start max-md:gap-8 max-[480px]:flex-col max-[480px]:w-full max-[360px]:p-6">
-                    <div class="max-md:w-[220px] max-[480px]:w-full">
-                        <div class="profile flex gap-3">
-                            <img class="w-[4em]" src="./elements/Rectangle 807.svg" alt="doctor">
-                            <div class="flex flex-col">
-                                <strong>Маргарита</strong>
-                                <p class="prg text-[--gray-color]">Куратор лечения</p>
-                            </div>
-                        </div>
-                        <p class="mt-6 prg">
-                            После прохождения сориентирует
-                            по стоимости и ответит на все вопросы.
-                        </p>
-                    </div>
-                    <div class=" max-md:w-[220px] max-[480px]:w-full">
-                        <p class="prg font-semibold mt-8 max-md:mt-0">Ответьте на 5 вопросов и
-                            получите:</p>
-                        <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-gift text-[--main-color]"></i>
-                            <p class="prg">
-                                Бесплатную консультацию
-                                от <span class="underline">стоматолога-кандидата наук</span>
-                            </p>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-gift text-[--main-color]"></i>
-                            <p class="prg">
-                                3 варианта стоимости
-                            </p>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <i class="fa-solid fa-gift text-[--main-color]"></i>
-                            <p class="prg">
-                                Сюрприз от стоматологии
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div
-                    class="calculate_select col-span-2 flex flex-col justify-center items-center p-[5em] max-lg:p-[3em] tr border border-gray-300 rounded-2xl max-[360px]:p-[1.5em]">
-                    <p class="text-xl">Сколько зубов нуждаются в лечении?</p>
-                    <div class="grid grid-cols-2 w-full mt-8 gap-2 max-[480px]:grid-cols-1">
-                        <div
-                            class="flex justify-center items-center w-full h-[3.5em] rounded-lg border border-gray-300 cursor-pointer">
-                            1
-                        </div>
-                        <div
-                            class="flex justify-center items-center w-full h-[3.5em] rounded-lg border border-gray-300 cursor-pointer">
-                            2
-                        </div>
-                        <div
-                            class="flex justify-center items-center w-full h-[3.5em] rounded-lg border border-gray-300 cursor-pointer">
-                            3
-                        </div>
-                        <div
-                            class="flex justify-center items-center w-full h-[3.5em] rounded-lg border border-gray-300 cursor-pointer">
-                            4 и
-                            более
-                        </div>
-                        <div
-                            class="flex justify-center items-center w-full h-[3.5em] rounded-lg border border-gray-300 cursor-pointer col-span-2 max-[480px]:col-span-1">
-                            Точно не знаю
-                        </div>
-                    </div>
-                    <div class="mt-8 w-full flex gap-4 items-center justify-between max-[360px]:flex-col">
-                        <div class="flex flex-col gap-2 items-start w-full">
-                            <p class="text-[--gray-color]">3 из 5</p>
-                            <div class="w-[42%] h-1 bg-gray-200 rounded-full relative max-[360px]:w-full">
-                                <div class="w-[60%] h-1 bg-blue-400 rounded-full absolute top-0 left-0"></div>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-2 w-full">
-                            <button
-                                class="prg px-3 py-2 text-[--gray-color] border border-gray-200 rounded-lg max-[360px]:w-full tr">Назад</button>
-                            <button
-                                class="prg px-3 py-2 bg-[--main-color] rounded-lg text-[--white-color] max-[360px]:w-full tr">Далее</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+			<section
+				class="group ctr mt-10 mb-[4em] max-xl:text-xs max-lg:text-[0.62em] tr max-md:text-sm max-sm:text-xl max-[480px]:text-sm max-[360px]:text-xs max-[320px]:text-xt">
+				<div class="group_head flex flex-col items-center text-center">
+					<h2 class="hdg leading-none">Ami Команда</h2>
+					<p class="text-xl mt-4">
+						Познакомьтесь с теми, кто вложит высокий стандарт Ami Clinic
+						<span class="text-[--text-color]">в вашу новую улыбку</span>
+					</p>
+					<div class="flex flex-wrap gap-2 items-center justify-center my-8">
+						<button
+							class="w-[6.5em] h-10 rounded-full text-[--white-color] font-semibold bg-[--main-color]">
+							Хирурги
+						</button>
+						<button
+							class="w-[6.5em] h-10 rounded-full text-[--black-color] font-semibold bg-[#F3F4F6]">
+							Ортопеды
+						</button>
+						<button
+							class="w-[6.5em] h-10 rounded-full text-[--black-color] font-semibold bg-[#F3F4F6]">
+							Техники
+						</button>
+						<button
+							class="w-[6.5em] h-10 rounded-full text-[--black-color] font-semibold bg-[#F3F4F6]">
+							Терапевты
+						</button>
+						<button
+							class="w-[6.5em] h-10 rounded-full text-[--black-color] font-semibold bg-[#F3F4F6]">
+							Ассистенты
+						</button>
+						<button
+							class="w-[6.5em] h-10 rounded-full text-[--black-color] font-semibold bg-[#F3F4F6]">
+							Кураторы
+						</button>
+					</div>
+				</div>
+				<div
+					class="group_cards grid grid-cols-3 gap-2 mb-4 max-md:grid-cols-2 max-sm:grid-cols-1">
+					<div
+						class="group_card-user w-full border border-gray-300 rounded-2xl">
+						<div class="img">
+							<img
+								class="rounded-t-2xl w-full"
+								src="./elements/8.png"
+								alt="doctor" />
+						</div>
+						<div
+							class="px-12 py-6 min-h-[19.5em] flex flex-col justify-between max-md:px-6 max-[360px]:min-h-[16em]">
+							<strong>Попов Константин Юрьевич</strong>
+							<p class="prg mt-4">Челюстно-лицевой хирург, стоматолог-хирург</p>
+							<div>
+								<p class="prg mt-5">
+									Стаж: <span class="font-semibold">10 лет</span>
+								</p>
+								<button class="btn mt-5 w-full">Записаться на приём</button>
+								<button
+									class="w-full bg-transparent border-none btn h-6 mt-4 text-[--gray-color]">
+									Подробнее о враче
+								</button>
+							</div>
+						</div>
+					</div>
+					<div
+						class="group_card-user w-full border border-gray-300 rounded-2xl">
+						<div class="img">
+							<img
+								class="rounded-t-2xl w-full"
+								src="./elements/9.png"
+								alt="doctor" />
+						</div>
+						<div
+							class="px-12 py-6 min-h-[19.5em] flex flex-col justify-between max-md:px-6 max-[360px]:min-h-[16em]">
+							<strong>Дремалов Борис Михайлович</strong>
+							<p class="prg mt-4">Хирург-ортопед высшей категории</p>
+							<p class="prg mt-5">
+								Стаж:
+								<span class="font-semibold"
+									>15 лет, кандидат <br />
+									медицинских наук</span
+								>
+							</p>
+							<button class="btn mt-5 w-full">Записаться на приём</button>
+							<button
+								class="w-full bg-transparent border-none btn h-6 mt-4 text-[--gray-color]">
+								Подробнее о враче
+							</button>
+						</div>
+					</div>
+					<div
+						class="group_card-user w-full border border-gray-300 rounded-2xl max-md:col-span-2 max-sm:col-span-1">
+						<div class="img">
+							<img
+								class="rounded-t-2xl w-full"
+								src="./elements/10.png"
+								alt="doctor" />
+						</div>
+						<div
+							class="px-12 py-6 min-h-[19.5em] flex flex-col justify-between max-sm:px-6 max-[360px]:min-h-[16em]">
+							<strong>Гаджиев Юсуп Исламович</strong>
+							<p class="prg mt-4">Хирург-ортопед высшей категории</p>
+							<p class="prg mt-5">
+								Стаж:
+								<span class="font-semibold"
+									>15 лет, кандидат <br />
+									медицинских наук</span
+								>
+							</p>
+							<button class="btn mt-5 w-full">Записаться на приём</button>
+							<button
+								class="w-full bg-transparent border-none btn h-6 mt-4 text-[--gray-color]">
+								Подробнее о враче
+							</button>
+						</div>
+					</div>
+				</div>
+				<div class="bottom w-full flex items-center justify-between gap-4">
+					<p class="prg text-[--gray-color]">1 из 3</p>
+					<div class="flex items-center gap-2">
+						<button
+							class="prg px-3 py-2 text-[--gray-color] border border-gray-200 rounded-lg max-[360px]:w-full tr">
+							Назад
+						</button>
+						<button
+							class="prg px-3 py-2 rounded-lg text-[--black-color] font-semibold border border-gray-200 max-[360px]:w-full tr">
+							Далее
+						</button>
+					</div>
+				</div>
+			</section>
 
-        <section
-            class="creating flex justify-between ctr gap-4 items-center max-xl:text-xs tr max-lg:text-xt max-md:flex-col-reverse max-md:text-sm max-[480px]:text-xt">
-            <div class="create_txt w-6/12 max-md:w-full">
-                <h2 class="hdg leading-none">Ami Clinic COZDANA <span class="text-[--text-color]"> с любовью</span></h2>
-                <p class="prg text-[--gray-color] mt-6">
-                    В 2016 году я привез технологию All-on-4 в Россию,
-                    сделав ставку на инновацию. Мне говорили: “Ничего не получится!”
-                    “Технология не подходит для российских реалий”
-                    Но у меня была вера и твердое убеждение:
-                    All-on-4 — это шанс получить новые зубы.
-                    Как свои, только еще лучше.
-                </p>
-                <br>
-                <p class="prg text-[--gray-color]">
-                    Я понимаю, насколько сейчас трудно выбрать стоматологию.
-                    На рынке сотни предложений “Зубы за 1 день”.
-                    Но мы видим огромное количество ошибок — когда присылают слепки, снимки, непроверенные окклюзии.
-                    Ведь еще 5 лет назад 9
-                    из 10 врачей отрицали саму возможность такой операции.
-                </p>
-                <div class="flex justify-between gap-6 items-center mt-12">
-                    <div>
-                        <h3 class="hdg text-[2em] leading-none">с 2016г</h3>
-                        <p class="prg text-[--gray-color]">Работаем по <br> технологии All-on-4</p>
-                    </div>
-                    <div>
-                        <h3 class="hdg text-[2em] leading-none">35 000+</h3>
-                        <p class="prg text-[--gray-color]">Установленных <br> имплантов</p>
-                    </div>
-                    <div>
-                        <h3 class="hdg text-[2em] leading-none">6000+</h3>
-                        <p class="prg text-[--gray-color]">Восстановленно <br> челюстей</p>
-                    </div>
-                </div>
-            </div>
-            <div class="create_img">
-                <img class="min-w-[30em] max-xl:w-[300px] tr max-lg:w-[250px] max-md:w-full"
-                    src="./elements/Group 5200.png" alt="people">
-            </div>
-        </section>
+			<section class="comfort ctr mb-12 max-sm:text-xs tr max-md:mb-6">
+				<h2
+					class="hdg leading-none text-center max-[480px]:text-[2em] max-[480px]:leading-normal max-[360px]:text-[1.75em]">
+					<span class="hdg text-[1em] text-[--text-color]">
+						Премиальный уровень комфорта
+					</span>
+					на 350 м²
+				</h2>
+				<div
+					class="comfort_imgs mt-12 mb-[7em] grid grid-cols-4 gap-2 max-md:grid-cols-2 max-md:mb-[2.5em] max-[360px]:grid-cols-1 max-[360px]:mt-8">
+					<div
+						class="img bg-[url('/elements/11.png')] bgStyle rounded-2xl w-full h-[17em] col-span-2 max-md:col-span-1"></div>
+					<div
+						class="img bg-[url('/elements/12.png')] bgStyle rounded-2xl w-full h-[17em]"></div>
+					<div
+						class="img bg-[url('/elements/13.png')] bgStyle rounded-2xl w-full h-[17em]"></div>
+					<div
+						class="img bg-[url('/elements/14.png')] bgStyle rounded-2xl w-full h-[17em]"></div>
+					<div
+						class="img bg-[url('/elements/15.png')] bgStyle rounded-2xl w-full h-[17em]"></div>
+					<div
+						class="img bg-[url('/elements/16.png')] bgStyle rounded-2xl w-full h-[17em] col-span-2 max-md:col-span-1"></div>
+				</div>
+			</section>
 
-        <section
-            class="group ctr mt-10 mb-[4em] max-xl:text-xs max-lg:text-[0.62em] tr max-md:text-sm max-sm:text-xl max-[480px]:text-sm max-[360px]:text-xs max-[320px]:text-xt">
-            <div class="group_head flex flex-col items-center text-center">
-                <h2 class="hdg leading-none">Ami Команда</h2>
-                <p class="text-xl mt-4">Познакомьтесь с теми, кто вложит высокий стандарт Ami Clinic
-                    <span class="text-[--text-color]">в вашу новую улыбку</span>
-                </p>
-                <div class="flex flex-wrap gap-2 items-center justify-center my-8">
-                    <button
-                        class="w-[6.5em] h-10 rounded-full text-[--white-color] font-semibold bg-[--main-color]">Хирурги</button>
-                    <button
-                        class="w-[6.5em] h-10 rounded-full text-[--black-color] font-semibold bg-[#F3F4F6]">Ортопеды</button>
-                    <button
-                        class="w-[6.5em] h-10 rounded-full text-[--black-color] font-semibold bg-[#F3F4F6]">Техники</button>
-                    <button
-                        class="w-[6.5em] h-10 rounded-full text-[--black-color] font-semibold bg-[#F3F4F6]">Терапевты</button>
-                    <button
-                        class="w-[6.5em] h-10 rounded-full text-[--black-color] font-semibold bg-[#F3F4F6]">Ассистенты</button>
-                    <button
-                        class="w-[6.5em] h-10 rounded-full text-[--black-color] font-semibold bg-[#F3F4F6]">Кураторы</button>
-                </div>
-            </div>
-            <div class="group_cards grid grid-cols-3 gap-2 mb-4 max-md:grid-cols-2 max-sm:grid-cols-1">
-                <div class="group_card-user w-full border border-gray-300 rounded-2xl">
-                    <div class="img">
-                        <img class="rounded-t-2xl w-full" src="./elements/8.png" alt="doctor">
-                    </div>
-                    <div
-                        class="px-12 py-6 min-h-[19.5em] flex flex-col justify-between max-md:px-6 max-[360px]:min-h-[16em]">
-                        <strong>Попов Константин Юрьевич</strong>
-                        <p class="prg mt-4">Челюстно-лицевой хирург, стоматолог-хирург</p>
-                        <div>
-                            <p class="prg mt-5">Стаж: <span class="font-semibold">10 лет</span></p>
-                            <button class="btn mt-5 w-full">Записаться на приём</button>
-                            <button class="w-full bg-transparent border-none btn h-6 mt-4 text-[--gray-color]">
-                                Подробнее о враче
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <div class="group_card-user w-full border border-gray-300 rounded-2xl">
-                    <div class="img">
-                        <img class="rounded-t-2xl w-full" src="./elements/9.png" alt="doctor">
-                    </div>
-                    <div
-                        class="px-12 py-6 min-h-[19.5em] flex flex-col justify-between max-md:px-6 max-[360px]:min-h-[16em]">
-                        <strong>Дремалов Борис Михайлович</strong>
-                        <p class="prg mt-4">Хирург-ортопед высшей категории</p>
-                        <p class="prg mt-5">Стаж: <span class="font-semibold">15 лет, кандидат <br>
-                                медицинских наук</span></p>
-                        <button class="btn mt-5 w-full">Записаться на приём</button>
-                        <button class="w-full bg-transparent border-none btn h-6 mt-4 text-[--gray-color]">Подробнее о
-                            враче</button>
-                    </div>
-                </div>
-                <div
-                    class="group_card-user w-full border border-gray-300 rounded-2xl max-md:col-span-2 max-sm:col-span-1">
-                    <div class="img">
-                        <img class="rounded-t-2xl w-full" src="./elements/10.png" alt="doctor">
-                    </div>
-                    <div
-                        class="px-12 py-6 min-h-[19.5em] flex flex-col justify-between max-sm:px-6 max-[360px]:min-h-[16em]">
-                        <strong>Гаджиев Юсуп Исламович</strong>
-                        <p class="prg mt-4">Хирург-ортопед высшей категории</p>
-                        <p class="prg mt-5">Стаж: <span class="font-semibold">15 лет, кандидат <br>
-                                медицинских наук</span></p>
-                        <button class="btn mt-5 w-full">Записаться на приём</button>
-                        <button class="w-full bg-transparent border-none btn h-6 mt-4 text-[--gray-color]">Подробнее о
-                            враче</button>
-                    </div>
-                </div>
-            </div>
-            <div class="bottom w-full flex items-center justify-between gap-4">
-                <p class="prg text-[--gray-color]">1 из 3</p>
-                <div class="flex items-center gap-2">
-                    <button
-                        class="prg px-3 py-2 text-[--gray-color] border border-gray-200 rounded-lg max-[360px]:w-full tr">Назад</button>
-                    <button
-                        class="prg px-3 py-2 rounded-lg text-[--black-color] font-semibold border border-gray-200 max-[360px]:w-full tr">Далее</button>
-                </div>
-            </div>
-        </section>
+			<section class="clinics ctr max-lg:text-xs tr max-sm:text-xt">
+				<h2 class="hdg">
+					Даже в тех случаях, где
+					<span class="font-['Babes'] text-[--text-color]"
+						>другие клиники бессильны</span
+					>
+				</h2>
+				<p class="prg mt-2">Реальные истории пациентов</p>
+				<div class="flex items-center gap-3 mt-8 flex-wrap">
+					<button
+						class="px-6 h-10 rounded-full text-[--white-color] bg-[--main-color]">
+						Все
+					</button>
+					<button
+						class="px-6 h-10 rounded-full text-[--black-color] bg-[#F3F4F6]">
+						All-on-4
+					</button>
+					<button
+						class="px-6 h-10 rounded-full text-[--black-color] bg-[#F3F4F6]">
+						Лечение зубов
+					</button>
+					<button
+						class="px-6 h-10 rounded-full text-[--black-color] bg-[#F3F4F6]">
+						Ортодонтия
+					</button>
+					<button
+						class="px-6 h-10 rounded-full text-[--black-color] bg-[#F3F4F6]">
+						Ортопедия
+					</button>
+				</div>
+				<div
+					class="clinica_about mt-10 grid grid-cols-3 gap-2 max-md:grid-cols-1">
+					<div
+						class="clinic_about-img w-full h-full bgStyle bg-[url('/elements/17.png')] p-6 flex items-end rounded-2xl max-md:h-[28em] max-[360px]:p-12">
+						<div class="flex items-center gap-6 cursor-pointer">
+							<i
+								class="fa-solid fa-circle-play fa-2xl scale-150 text-[--main-color]"></i>
+							<p class="prg text-[--white-color]">
+								Нажмите, чтобы посмореть отзыв
+							</p>
+						</div>
+					</div>
+					<div
+						class="clinic_about-txt w-full bg-[#f5f9fd] rounded-2xl border border-gray-300 px-[2.5em] py-[3em] col-span-2">
+						<p class="bprg">Лечение переодонтида</p>
+						<p class="prg mt-8">Врачи</p>
+						<p class="prg mt-3">
+							Гаджиев Юсуп Исламович, Гаджиев Юсуп Исламович, <br />
+							Гаджиев Юсуп Исламович
+						</p>
+						<p class="bprg mt-6">C чем обратились</p>
+						<p class="prg mt-3">
+							Lorem Ipsum is simply dummy text of the printing and typesetting
+							industry. Lorem Ipsum has been the industry's standard dummy text
+							ever since the 1500s, when an unknown printer took a galley of
+							type and scrambled it to make a type specimen book.
+						</p>
+						<p class="bprg mt-6">Что сделали</p>
+						<p class="prg mt-3">
+							Lorem Ipsum is simply dummy text of the printing and typesetting
+							industry. Lorem Ipsum has been the industry's standard dummy text
+							ever since the 1500s, when an unknown printer took a galley of
+							type and scrambled it to make a type specimen book.
+						</p>
+						<div class="flex gap-6 items-center mt-6">
+							<div>
+								<p class="prg font-semibold">Стоимость</p>
+								<p class="prg mt-2">250 000 руб.</p>
+							</div>
+							<div>
+								<p class="prg font-semibold">Сроки</p>
+								<p class="prg mt-2">1 день</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="bottom w-full flex items-center justify-between gap-4 mt-6">
+					<p class="prg text-[--gray-color]">1 из 3</p>
+					<div class="flex items-center gap-2">
+						<button
+							class="prg px-3 py-2 text-[--gray-color] border border-gray-200 rounded-lg max-[360px]:w-full tr">
+							Назад
+						</button>
+						<button
+							class="prg px-3 py-2 rounded-lg text-[--black-color] font-semibold border border-gray-200 max-[360px]:w-full tr">
+							Далее
+						</button>
+					</div>
+				</div>
+			</section>
 
-        <section class="comfort ctr mb-12 max-sm:text-xs tr max-md:mb-6">
-            <h2
-                class="hdg leading-none text-center max-[480px]:text-[2em] max-[480px]:leading-normal max-[360px]:text-[1.75em]">
-                <span class="hdg text-[1em] text-[--text-color]">
-                    Премиальный уровень комфорта
-                </span>
-                на 350 м²
-            </h2>
-            <div
-                class="comfort_imgs mt-12 mb-[7em] grid grid-cols-4 gap-2 max-md:grid-cols-2 max-md:mb-[2.5em] max-[360px]:grid-cols-1 max-[360px]:mt-8">
-                <div
-                    class="img bg-[url('/elements/11.png')] bgStyle rounded-2xl w-full h-[17em] col-span-2 max-md:col-span-1">
-                </div>
-                <div class="img bg-[url('/elements/12.png')] bgStyle rounded-2xl w-full h-[17em]"></div>
-                <div class="img bg-[url('/elements/13.png')] bgStyle rounded-2xl w-full h-[17em]"></div>
-                <div class="img bg-[url('/elements/14.png')] bgStyle rounded-2xl w-full h-[17em]"></div>
-                <div class="img bg-[url('/elements/15.png')] bgStyle rounded-2xl w-full h-[17em]"></div>
-                <div
-                    class="img bg-[url('/elements/16.png')] bgStyle rounded-2xl w-full h-[17em] col-span-2 max-md:col-span-1">
-                </div>
-            </div>
-        </section>
+			<section
+				class="starting ctr mt-[4em] max-xl:text-sm tr max-lg:text-base max-[900px]:text-xs max-[700px]:text-base max-[480px]:text-xs max-[360px]:text-xt">
+				<h2 class="hdg font-['Babes']">С чего начать, если есть сомнения?</h2>
+				<div class="starting_body mt-10 flex gap-8 max-[700px]:flex-col">
+					<div
+						class="bg-[url('/elements/20.png')] bgStyle bgSize p-8 rounded-2xl bg-[#f9fafb] w-full h-[22em] max-xl:h-[27em] max-lg:bg-none max-lg:h-[15em]">
+						<div
+							class="w-[350px] max-xl:w-full max-lg:flex max-lg:flex-col max-lg:justify-between">
+							<p class="text-xl font-semibold">Обсудить вашу ситуацию</p>
+							<p class="prg mt-3">
+								Ответим на все вопросы, предложим варианты лечения, сориентируем
+								по стоимости.
+							</p>
+							<button
+								class="mt-6 px-5 py-2 bg-white border border-gray-300 rounded-md">
+								Получить консультацию
+							</button>
+						</div>
+					</div>
+					<div
+						class="bg-[url('/elements/21.png')] bgStyle bg-auto bg-right-bottom p-8 rounded-2xl bg-[#f9fafb] w-full h-[22em] max-xl:h-[28em] max-lg:bg-none max-lg:h-[15em]">
+						<div
+							class="w-[350px] max-xl:w-full max-lg:flex max-lg:flex-col max-lg:justify-between">
+							<p class="text-xl font-semibold">Ознакомится с презентацией</p>
+							<p class="prg mt-3">
+								Описание всех услуг и цен, чтобы после разговора ознакомится со
+								всем лично.
+							</p>
+							<button
+								class="mt-9 px-5 py-2 bg-white border border-gray-300 rounded-md max-[900px]:mt-6 tr">
+								Получить презентацию
+							</button>
+						</div>
+					</div>
+				</div>
+			</section>
 
-        <section class="clinics ctr max-lg:text-xs tr max-sm:text-xt">
-            <h2 class="hdg">Даже в тех случаях, где <span class="font-['Babes'] text-[--text-color]">другие клиники
-                    бессильны</span>
-            </h2>
-            <p class="prg mt-2">Реальные истории пациентов</p>
-            <div class="flex items-center gap-3 mt-8 flex-wrap">
-                <button class="px-6 h-10 rounded-full text-[--white-color] bg-[--main-color]">Все</button>
-                <button class="px-6 h-10 rounded-full text-[--black-color] bg-[#F3F4F6]">All-on-4</button>
-                <button class="px-6 h-10 rounded-full text-[--black-color] bg-[#F3F4F6]">Лечение зубов</button>
-                <button class="px-6 h-10 rounded-full text-[--black-color] bg-[#F3F4F6]">Ортодонтия</button>
-                <button class="px-6 h-10 rounded-full text-[--black-color] bg-[#F3F4F6]">Ортопедия</button>
-            </div>
-            <div class="clinica_about mt-10 grid grid-cols-3 gap-2 max-md:grid-cols-1">
-                <div
-                    class="clinic_about-img w-full h-full bgStyle bg-[url('/elements/17.png')] p-6 flex items-end rounded-2xl max-md:h-[28em] max-[360px]:p-12">
-                    <div class="flex items-center gap-6 cursor-pointer">
-                        <i class="fa-solid fa-circle-play fa-2xl scale-150 text-[--main-color]"></i>
-                        <p class="prg text-[--white-color]">Нажмите, чтобы посмореть отзыв</p>
-                    </div>
-                </div>
-                <div
-                    class="clinic_about-txt w-full bg-[#f5f9fd] rounded-2xl border border-gray-300 px-[2.5em] py-[3em] col-span-2">
-                    <p class="bprg">Лечение переодонтида</p>
-                    <p class="prg mt-8">Врачи</p>
-                    <p class="prg mt-3">
-                        Гаджиев Юсуп Исламович, Гаджиев Юсуп Исламович, <br>
-                        Гаджиев Юсуп Исламович
-                    </p>
-                    <p class="bprg mt-6">C чем обратились</p>
-                    <p class="prg mt-3">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard
-                        dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it
-                        to make a type specimen
-                        book.
-                    </p>
-                    <p class="bprg mt-6">Что сделали</p>
-                    <p class="prg mt-3">
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                        the industry's standard
-                        dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it
-                        to make a type specimen
-                        book.
-                    </p>
-                    <div class="flex gap-6 items-center mt-6">
-                        <div>
-                            <p class="prg font-semibold">Стоимость</p>
-                            <p class="prg mt-2">250 000 руб.</p>
-                        </div>
-                        <div>
-                            <p class="prg font-semibold">Сроки</p>
-                            <p class="prg mt-2">1 день</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="bottom w-full flex items-center justify-between gap-4 mt-6">
-                <p class="prg text-[--gray-color]">1 из 3</p>
-                <div class="flex items-center gap-2">
-                    <button
-                        class="prg px-3 py-2 text-[--gray-color] border border-gray-200 rounded-lg max-[360px]:w-full tr">Назад</button>
-                    <button
-                        class="prg px-3 py-2 rounded-lg text-[--black-color] font-semibold border border-gray-200 max-[360px]:w-full tr">Далее</button>
-                </div>
-            </div>
-        </section>
-    </main>
+			<section
+				class="coffee ctr my-[6em] bg-[url('/elements/22.png')] bg-auto bgStyle pt-[5em] grid grid-cols-2 p-8 gap-4 text-[0.9em] max-lg:grid-cols-2 max-lg:bg-none max-lg:bg-[#eff6fd] max-lg:m-0 max-lg:w-full max-lg:text-base max-[900px]:text-sm max-md:text-xs max-[660px]:grid-cols-1 max-[360px]:text-xt max-lg:mt-8">
+				<div class="max-lg:hidden"></div>
+				<div
+					class="p-8 rounded-xl bg-white max-lg:col-span-2 max-[660px]:col-span-1">
+					<h2 class="hdg leading-none">
+						Новые зубы по цене<span class="text-[--text-color]">
+							чашки кофе в день</span
+						>
+					</h2>
+					<p class="prg mt-4">
+						В стоматологии Ami Clinic лечение доступно каждому без мнимой
+						экономии! Следите за здоровьем зубов у ведущих специалистов Москвы
+						на самых гибких условиях.
+					</p>
+				</div>
+				<div class="p-8 rounded-xl bg-white max-[660px]:text-xl">
+					<div class="flex gap-2 items-start justify-between">
+						<p class="prg text-xl font-semibold">Рассрочка от Ami Clinic</p>
+						<div class="max-lg:hidden">
+							<img class="w-full" src="./elements/23.svg" alt="" />
+						</div>
+					</div>
+					<p class="prg">6 месяцев</p>
+					<p class="prg">От 300 руб. в день</p>
+					<p class="prg">Оформление на месте</p>
+					<button class="btn mt-10">Узнать подробнее</button>
+				</div>
+				<div class="p-8 rounded-xl bg-white max-[660px]:text-xl">
+					<div class="flex gap-2 items-start justify-between">
+						<p class="prg text-xl font-semibold">
+							Рассрочка от 25 банков-партнеров
+						</p>
+						<div class="max-lg:hidden">
+							<img class="w-full" src="./elements/24.svg" alt="" />
+						</div>
+					</div>
+					<div
+						class="translate-y-[-5.5em] max-[1300px]:translate-y-[-4em] max-xl:translate-y-0 tr">
+						<p class="prg">Одобряемость 90% прямо на консультации</p>
+						<p class="prg">Без первоночального взноса до 12 мес.</p>
+						<p class="prg">С первоночальным взносом до 24 мес.</p>
+						<button class="btn mt-10">Узнать подробнее</button>
+					</div>
+				</div>
+			</section>
+		</main>
 
-
-
-    <script src="./main.js"></script>
-</body>
-
+		<script src="./main.js"></script>
+	</body>
 </html>
