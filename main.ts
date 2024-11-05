@@ -22,6 +22,8 @@ xmark.addEventListener("click", () => {
 
 let groupCards = document.querySelector(".group_cards") as HTMLDivElement;
 let about = document.getElementById("about") as HTMLDivElement;
+let groupPrevious = document.getElementById("group_next") as HTMLButtonElement;
+let groupNext = document.getElementById("group_previous") as HTMLButtonElement;
 
 async function getFetch(group: string) {
 	try {
@@ -46,8 +48,11 @@ interface FirstObjType {
 
 function addData() {
 	getFetch(`users`).then((data) => {
+		let num: number = 0;
 		data.forEach((item: FirstObjType) => {
-			groupCards.innerHTML += `
+			num++;
+			if (num <= 3) {
+				groupCards.innerHTML += `
             <div
 				class="group_card-user w-full border border-gray-300 rounded-2xl">
 				<div class="img">
@@ -73,6 +78,81 @@ function addData() {
 				</div>
 			</div>
             `;
+			}
+		});
+	});
+	groupNext.addEventListener("click", () => {
+		getFetch(`users`).then((data) => {
+			groupCards.innerHTML = "";
+			let num: number = 0;
+			data.forEach((item: FirstObjType) => {
+				num++;
+				if (num > 3 && num <= 7) {
+					groupCards.innerHTML += `
+                <div
+                    class="group_card-user w-full border border-gray-300 rounded-2xl">
+                    <div class="img">
+                        <img
+                            class="rounded-t-2xl w-full"
+                            src=".${item.src}"
+                            alt="doctor" />
+                    </div>
+                    <div
+                        class="px-12 py-6 min-h-[19.5em] flex flex-col justify-between max-md:px-6 max-[360px]:min-h-[16em]">
+                        <strong>Попов Константин Юрьевич</strong>
+                        <p class="prg mt-4">${item.info}</p>
+                        <div>
+                            <p class="prg mt-5">
+                                Стаж: <span class="font-semibold">${item.Experience}</span>
+                            </p>
+                            <button class="btn mt-5 w-full">Записаться на приём</button>
+                            <button
+                                class="w-full bg-transparent border-none btn h-6 mt-4 text-[--gray-color]">
+                                Подробнее о враче
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                `;
+				}
+			});
+		});
+	});
+	groupPrevious.addEventListener("click", () => {
+		getFetch(`users`).then((data) => {
+			groupCards.innerHTML = "";
+			let num: number = 0;
+			data.forEach((item: FirstObjType) => {
+				num++;
+				if (num <= 3) {
+					groupCards.innerHTML += `
+                <div
+                    class="group_card-user w-full border border-gray-300 rounded-2xl">
+                    <div class="img">
+                        <img
+                            class="rounded-t-2xl w-full"
+                            src=".${item.src}"
+                            alt="doctor" />
+                    </div>
+                    <div
+                        class="px-12 py-6 min-h-[19.5em] flex flex-col justify-between max-md:px-6 max-[360px]:min-h-[16em]">
+                        <strong>Попов Константин Юрьевич</strong>
+                        <p class="prg mt-4">${item.info}</p>
+                        <div>
+                            <p class="prg mt-5">
+                                Стаж: <span class="font-semibold">${item.Experience}</span>
+                            </p>
+                            <button class="btn mt-5 w-full">Записаться на приём</button>
+                            <button
+                                class="w-full bg-transparent border-none btn h-6 mt-4 text-[--gray-color]">
+                                Подробнее о враче
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                `;
+				}
+			});
 		});
 	});
 	getFetch(`cards`).then((data) => {
